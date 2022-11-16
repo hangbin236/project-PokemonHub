@@ -3,6 +3,7 @@ package com.pokemonHub.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.pokemonHub.pojo.PokemonPojo;
 import com.pokemonHub.service.PokemonService;
 
+@CrossOrigin
 @RestController
 @RequestMapping("api")
 public class PokemonController {
@@ -19,9 +21,11 @@ public class PokemonController {
 	@Autowired
 	PokemonService pokemonService;
 	
-	@GetMapping("pokemons")
+	@GetMapping("allPokemons")
 	public List<PokemonPojo> getAllPokemons(){
-		return null;
+		
+		List<PokemonPojo> allPokemons = pokemonService.getAllPokemons();
+		return allPokemons;
 		
 	}
 }

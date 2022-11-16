@@ -3,12 +3,11 @@ package com.pokemonHub.dao;
 import java.util.List;
 
 import com.pokemonHub.entity.PokemonEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public class PokemonDao {
+public interface PokemonDao extends JpaRepository<PokemonEntity, Integer>{
 
-	public static List<PokemonEntity> findAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 
 }
