@@ -22,7 +22,7 @@ public class PokemonEntity {
 		@Column(name ="pokemon_name")
 		private String pokemonName;
 
-		@Column(name ="pokemon_setName")
+		@Column(name ="pokemon_setname")
 		private String pokemonSetName;
 
 		@Column(name ="pokemon_condition")
@@ -38,8 +38,7 @@ public class PokemonEntity {
 		 * 
 		 */
 		public PokemonEntity() {
-			super();
-			// TODO Auto-generated constructor stub
+		
 		}
 
 		/**
@@ -54,6 +53,25 @@ public class PokemonEntity {
 				int pokemonPrice, String pokemonImage) {
 			super();
 			this.pokemonId = pokemonId;
+			this.pokemonName = pokemonName;
+			this.pokemonSetName = pokemonSetName;
+			this.pokemonCondition = pokemonCondition;
+			this.pokemonPrice = pokemonPrice;
+			this.pokemonImage = pokemonImage;
+		}
+		
+		
+
+		/**
+		 * @param pokemonName
+		 * @param pokemonSetName
+		 * @param pokemonCondition
+		 * @param pokemonPrice
+		 * @param pokemonImage
+		 */
+		public PokemonEntity(String pokemonName, String pokemonSetName, String pokemonCondition, int pokemonPrice,
+				String pokemonImage) {
+			super();
 			this.pokemonName = pokemonName;
 			this.pokemonSetName = pokemonSetName;
 			this.pokemonCondition = pokemonCondition;

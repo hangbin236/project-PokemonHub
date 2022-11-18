@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pokemonHub.pojo.PokemonPojo;
@@ -21,11 +22,16 @@ public class PokemonController {
 	@Autowired
 	PokemonService pokemonService;
 	
-	@GetMapping("allPokemons")
+	// http:localhost:7474/api/allpokemons
+	@GetMapping("allpokemons")
 	public List<PokemonPojo> getAllPokemons(){
 		
 		List<PokemonPojo> allPokemons = pokemonService.getAllPokemons();
 		return allPokemons;
 		
+	}
+	@RequestMapping("hello")
+	public @ResponseBody String greeting() {
+		return "Hello, World";
 	}
 }
